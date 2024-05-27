@@ -1,0 +1,154 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+#root {
+  font-family: "Orbitron", sans-serif;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+}
+
+.loader-container {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  transform: translate(-50%, -50%);
+}
+
+.loader-progress {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  font-size: 12rem;
+}
+
+.loader-completed {
+  position: absolute;
+  top: 7%;
+  left: 50%;
+  transform: translate(-50%, 0);
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: start;
+  align-items: center;
+  gap: 7vh;
+
+  height: 50vh;
+  width: 100vw;
+
+  font-size: 2rem;
+  color: white;
+}
+
+.start-button {
+  position: relative;
+  background: none;
+  color: black;
+  font-weight: 600;
+  border: none;
+  outline: none;
+  background-color: #32d3ff;
+  padding: 1em 2em;
+  cursor: pointer;
+}
+
+.start-button::before {
+  content: "";
+  position: absolute;
+  scale: 1;
+  top: 90%;
+  left: -10%;
+
+  width: 15%;
+  height: 30%;
+
+  border-bottom: 2px solid white;
+  border-left: 2px solid white;
+
+  z-index: -1;
+  transition: transform 0.5s;
+}
+
+.start-button::after {
+  content: "";
+  position: absolute;
+  scale: 1;
+  right: -10%;
+  bottom: 90%;
+
+  width: 15%;
+  height: 30%;
+
+  border-top: 2px solid white;
+  border-right: 2px solid white;
+
+  z-index: -1;
+  transition: transform 0.5s;
+}
+
+.start-button:hover::before {
+  transform: translate(-25%, 25%);
+}
+.start-button:hover::after {
+  transform: translate(25%, -25%);
+}
+
+.points-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+  color: #32d3ff;
+}
+.points {
+  margin-top: 0.5em;
+  font-size: 1.25rem;
+  color: white;
+}
+
+.gameover {
+  cursor: auto;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+
+  background-color: rgba(0, 0, 0, 0.6);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+
+  color: white;
+}
+
+.encrypted-text {
+  user-select: none;
+  cursor: pointer;
+  width: 300px;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #32d3ff;
+}
